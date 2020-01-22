@@ -9,7 +9,7 @@ import { Text, View } from 'react-native';
 
 import Main from './screens/MainScreen.js'
 import Camera from './screens/CameraScreen.js'
-import Status from './screens/Status.js'
+import Status from './screens/StatusScreen.js'
 import Chamadas from './screens/ChamadasScreen.js'
 
 const cameraIcon = <Icon name='camera' size={25} style={{color: '#fff', opacity: 0.3}}/>
