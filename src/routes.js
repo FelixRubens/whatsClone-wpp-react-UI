@@ -8,8 +8,11 @@ import {MaterialIcons} from '@expo/vector-icons';
 import { Text, View } from 'react-native';
 
 import Main from './screens/MainScreen.js'
+import Camera from './screens/CameraScreen.js'
+import Status from './screens/Status.js'
+import Chamadas from './screens/ChamadasScreen.js'
 
-const camera = <Icon name='camera' size={25} style={{color: '#fff', opacity: 0.3}}/>
+const cameraIcon = <Icon name='camera' size={25} style={{color: '#fff', opacity: 0.3}}/>
 
 const title = (
     <View style={{flexDirection: 'row'}}>
@@ -21,10 +24,12 @@ const title = (
 
 const Mytabs = createMaterialTopTabNavigator({
     camera: {
-        screen: Main,
+        screen: Camera,
         navigationOptions: {
+            title: false,
+            tabBarVisible: false,
             tabBarLabel:  ({focused, tintColor}) => (<Icon name='camera' focused={focused} size={25} style={{color: tintColor}}/>),
-            tabBarIcon: camera
+            tabBarIcon: cameraIcon,
         },
     },
     conversas: {
@@ -34,18 +39,20 @@ const Mytabs = createMaterialTopTabNavigator({
         }
     },
     status: {
-        screen: Main,
+        screen: Status,
         navigationOptions: {
             tabBarLabel: ({focused, tintColor}) => (<Text focused={focused} style={{fontWeight: 'bold', color: tintColor }}>STATUS</Text>)
         }
     },
     chamadas: {
-        screen: Main,
+        screen: Chamadas,
         navigationOptions: {
             tabBarLabel: ({focused, tintColor}) => (<Text focused={focused} style={{fontWeight: 'bold', color: tintColor }}>CHAMADAS</Text>),
         }
     }
 }, {
+    initialRouteName: 'conversas',
+
     tabBarOptions: {
 
         activeTintColor: '#fff',
@@ -69,22 +76,25 @@ const Mytabs = createMaterialTopTabNavigator({
             paddingHorizontal: '4.3%',
         },
 
-    }
+    },
 });
 
 const mystack = createStackNavigator({
-    home: Mytabs
+    home: {
+        screen: Mytabs,
+    },
 },{
     defaultNavigationOptions: {
-        title: 'Whatsapp',
+        title: 'WhatsApp',
         headerStyle: {
             backgroundColor: '#075e54',
             elevation: 0,
-            shadowOpacity: 0
+            shadowOpacity: 0,
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
             fontWeight: 'bold',
+            fontFamily: 'sans-serif-light'
         },
         headerRight: title
     },
