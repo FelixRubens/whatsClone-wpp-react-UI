@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { FlatList} from 'react-native';
+import { FlatList, TouchableOpacity} from 'react-native';
 
 import info from '../users/info.js'
-import ChatCard from '../components/ChatCard.js';
-import FooterButton from '../components/FooterButton.js';
+import ChatCard from '../components/ChatComponents/ChatCard.js';
+import FooterButton from '../components/ChatComponents/FooterButton.js';
 
-export default function MainScreen() {
+export default function MainScreen({navigation}) {
 
   const [users, setUsers] = useState([]);
 
@@ -13,17 +13,20 @@ export default function MainScreen() {
     setUsers(info)
   },[])
 
+
   return (
     <>
       <FlatList
+        style={{backgroundColor: 'white'}}
         data={users}
         keyExtractor={post => String(post.id)}
         renderItem={({item}) => (
-          <ChatCard 
-            userName={item.name}
-            userMessage={item.msg}
-            avatar={item.avatar}
-          />
+            <ChatCard
+              navigation={navigation}
+              userName={item.name}
+              userMessage={item.msg}
+              avatar={item.avatar}
+            />
         )}
       />
       <FooterButton />

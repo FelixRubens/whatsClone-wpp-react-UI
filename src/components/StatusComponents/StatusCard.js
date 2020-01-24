@@ -8,12 +8,12 @@ export default function Statuscard({
 }) {
   return (
     <>
-        <View style={styles.card}>
-        <Image style={styles.avatar} source={avatar}/>
-        <View style={styles.info}>
+        <View style={statusStyles.card}>
+        <Image style={statusStyles.avatar} source={avatar}/>
+        <View style={statusStyles.info}>
             <View>
-            <Text style={styles.name}>{userName}</Text>
-            <Text style={styles.hour}>Hoje 00:00</Text>
+            <Text style={statusStyles.name}>{userName}</Text>
+            <Text style={statusStyles.hour}>Hoje 00:00</Text>
             </View>
         </View>
         </View>
@@ -22,7 +22,7 @@ export default function Statuscard({
 }
 
 
-styles = StyleSheet.create({
+statusStyles = StyleSheet.create({
     card: {
         marginBottom: 6,
         height: 75,

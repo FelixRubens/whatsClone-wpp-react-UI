@@ -11,6 +11,7 @@ import Main from './screens/MainScreen.js'
 import Camera from './screens/CameraScreen.js'
 import Status from './screens/StatusScreen.js'
 import Chamadas from './screens/ChamadasScreen.js'
+import Conversa from './screens/PrivateChatScreen.js'
 
 const cameraIcon = <Icon name='camera' size={25} style={{color: '#fff', opacity: 0.3}}/>
 
@@ -18,6 +19,14 @@ const title = (
     <View style={{flexDirection: 'row'}}>
         <MaterialIcons name='search' size={25}  style={{color: '#fff', marginHorizontal: 15}}/>
         <More name='more-vertical' size={25}  style={{color: '#fff', marginRight: 15}}/>
+    </View>
+)
+
+const chatTitle = (
+    <View style={{flexDirection: 'row'}}>
+        <Icon name='video' size={18}  style={{color: '#fff', marginHorizontal: 10}}/>
+        <MaterialIcons name='search' size={25}  style={{color: '#fff', marginHorizontal: 10}}/>
+        <More name='more-vertical' size={25}  style={{color: '#fff', marginRight: 10}}/>
     </View>
 )
 
@@ -82,22 +91,39 @@ const Mytabs = createMaterialTopTabNavigator({
 const mystack = createStackNavigator({
     home: {
         screen: Mytabs,
+        navigationOptions: {
+            title: 'WhatsApp',
+            headerStyle: {
+                backgroundColor: '#075e54',
+                elevation: 0,
+                shadowOpacity: 0,
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+                fontFamily: 'sans-serif-light'
+            },
+            headerRight: title
+        },
     },
+    Conversa: {
+        screen: Conversa,
+        navigationOptions: ({navigation}) => ({
+            title:navigation.getParam('userName'),
+            headerStyle: {
+                backgroundColor: '#075e54',
+                elevation: 0,
+                shadowOpacity: 0,
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+                fontFamily: 'sans-serif-light'
+            },
+            headerRight: chatTitle
+        })
+    }
 },{
-    defaultNavigationOptions: {
-        title: 'WhatsApp',
-        headerStyle: {
-            backgroundColor: '#075e54',
-            elevation: 0,
-            shadowOpacity: 0,
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-            fontWeight: 'bold',
-            fontFamily: 'sans-serif-light'
-        },
-        headerRight: title
-    },
     
 })
 

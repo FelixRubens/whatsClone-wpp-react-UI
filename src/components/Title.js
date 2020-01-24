@@ -6,14 +6,14 @@ import { View, StyleSheet } from 'react-native';
 
 export default function Title() {
   return (
-    <View style={styles.Title}>
+    <View style={titlesStyles.Title}>
         <MaterialIcons name='search' size={25}  style={{color: '#fff', marginHorizontal: 15}}/>
         <More name='more-vertical' size={25}  style={{color: '#fff', marginRight: 15}}/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const titlesStyles = StyleSheet.create({
     Title: {
         flexDirection: 'row',
         position: 'absolute',

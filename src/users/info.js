@@ -62,7 +62,7 @@ const info =
 },{
     id: 12,
     name: 'Quati',
-    msg: 'e o nude?',
+    msg: 'Eu sei po',
     avatar: require('../assets/Quati.jpg')
 },
 

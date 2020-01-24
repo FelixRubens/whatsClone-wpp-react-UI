@@ -7,24 +7,24 @@ export default function components({
 }) {
   return (
     <>
-        <View style={styles.Mycard}>
-            <Image style={styles.MyAvatar} source={avatar}/>
-            <Icon name='add-circle' size={25} style={styles.addIcon} />
-        <View style={styles.MyInfo}>
+        <View style={myStatusStyles.Mycard}>
+            <Image style={myStatusStyles.MyAvatar} source={avatar}/>
+            <Icon name='add-circle' size={25} style={myStatusStyles.addIcon} />
+        <View style={myStatusStyles.MyInfo}>
             <View>
-            <Text style={styles.MyName}>Meu status</Text>
-            <Text style={styles.MyStatus}>Toque para atualizar seu status</Text>
+            <Text style={myStatusStyles.MyName}>Meu status</Text>
+            <Text style={myStatusStyles.MyStatus}>Toque para atualizar seu status</Text>
             </View>
         </View>
         </View>
-        <View style={styles.gap}>
-          <Text style={styles.gapText}>Atualizações recentes</Text>
+        <View style={myStatusStyles.gap}>
+          <Text style={myStatusStyles.gapText}>Atualizações recentes</Text>
         </View>
     </>
   );
 }
 
-styles = StyleSheet.create({
+myStatusStyles = StyleSheet.create({
     Mycard: {
         height: 75,
         width: '100%',

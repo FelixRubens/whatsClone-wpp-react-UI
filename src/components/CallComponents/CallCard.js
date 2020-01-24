@@ -12,24 +12,24 @@ export default function CallCard({
 
   return (
     <>
-      <View style={styles.card}>
-        <Image style={styles.avatar} source={avatar}/>
-        <View style={styles.info}>
+      <View style={CallStyles.card}>
+        <Image style={CallStyles.avatar} source={avatar}/>
+        <View style={CallStyles.info}>
           <View>
-            <Text style={styles.name}>{userName}</Text>
-            <View style={styles.nameIcon}>
+            <Text style={CallStyles.name}>{userName}</Text>
+            <View style={CallStyles.nameIcon}>
                 <Arrow name='arrow-top-right' size={15} color={'#25D366'}/>
-                <Text style={styles.callTime}>há 10 minutos</Text>
+                <Text style={CallStyles.callTime}>há 10 minutos</Text>
             </View>
           </View>
-          <Icon name='telephone' size={30} style={styles.telephone}/>
+          <Icon name='telephone' size={30} style={CallStyles.telephone}/>
         </View>
       </View>
     </>
   );
 }
 
-const styles = StyleSheet.create({
+const CallStyles = StyleSheet.create({
     card: {
       marginBottom: 6,
       height: 75,

@@ -1,31 +1,32 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 
 
 export default function ChatCard({
     userName,
     userMessage,
-    avatar
+    avatar,
+    navigation
 }) {
 
 
   return (
     <>
-      <View style={styles.card}>
-        <Image style={styles.avatar} source={avatar}/>
-        <View style={styles.info}>
+      <TouchableOpacity style={chatStyles.card} onPress={() => navigation.navigate('Conversa', {userName, avatar})}>
+        <Image style={chatStyles.avatar} source={avatar}/>
+        <View style={chatStyles.info}>
           <View>
-            <Text style={styles.name}>{userName}</Text>
-            <Text style={styles.message}>{userMessage}</Text>
+            <Text style={chatStyles.name}>{userName}</Text>
+            <Text style={chatStyles.message}>{userMessage}</Text>
           </View>
-          <Text style={styles.hour}>00:00</Text>
+          <Text style={chatStyles.hour}>00:00</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     </>
   );
 }
 
-const styles = StyleSheet.create({
+const chatStyles = StyleSheet.create({
     card: {
       marginBottom: 6,
       height: 75,

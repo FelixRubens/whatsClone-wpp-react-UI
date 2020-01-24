@@ -5,18 +5,18 @@ import Camera from 'react-native-vector-icons/FontAwesome5';
 
 export default function StatusFooterButttons() {
   return (
-    <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.pencil}>
+    <View style={statusFooterStyles.buttonsContainer}>
+        <TouchableOpacity style={statusFooterStyles.pencil}>
             <Pencil name='pencil' size={25} style={{color: "#333"}}/>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.camera}>
+        <TouchableOpacity style={statusFooterStyles.camera}>
             <Camera name='camera' size={25} style={{color: "white"}}/>
         </TouchableOpacity>
     </View>
   );
 }
 
-styles = StyleSheet.create({
+statusFooterStyles = StyleSheet.create({
     buttonsContainer: {
         flexDirection: 'column',
         position: 'absolute',

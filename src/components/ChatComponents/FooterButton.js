@@ -4,13 +4,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export default function FooterButtton() {
   return (
-    <TouchableOpacity style={styles.footerButton}>
+    <TouchableOpacity style={footerStyles.footerButton}>
         <Icon name='message' size={25} style={{color: "white"}}/>
     </TouchableOpacity>
   );
 }
 
-styles = StyleSheet.create({
+footerStyles = StyleSheet.create({
     footerButton: {
         position: 'absolute',
         right: 20,

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { View, FlatList, ScrollView } from 'react-native';
 
-import Status from '../components/StatusCard.js';
-import MyStatus from '../components/MyStatusCard.js';
-import StatusFooterButttons from '../components/StatusFooterButtons.js'
+import Status from '../components/StatusComponents/StatusCard.js';
+import MyStatus from '../components/StatusComponents/MyStatusCard.js';
+import StatusFooterButttons from '../components/StatusComponents/StatusFooterButtons.js'
 
 import info from '../users/info.js';
 
@@ -17,7 +17,7 @@ export default function StatusScreen() {
 
   return (
     <>
-      <ScrollView>
+      <ScrollView style={{backgroundColor: 'white'}}>
         <MyStatus avatar={require('../assets/Rubens.jpg')} />
         {users.map((user) => (
           <Status 
